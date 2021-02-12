@@ -1,37 +1,30 @@
-CREATE schema anotacao;
+create schema anotacao;
 
-USE anotacao;
+use anotacao;
 
-CREATE user 'user' @'localhost' IDENTIFIED by 'pass123';
+create user 'user'@'localhost' identified by 'pass123';
 
-GRANT
-SELECT
-,
-INSERT
-,
-    DELETE,
-UPDATE
-    ON anotacao.* TO user @'localhost';
+grant select, insert, delete, update on anotacao.* to user@'localhost';
 
-CREATE TABLE usr_usuario (
-    usr_id bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-    usr_nome varchar(20) NOT NULL,
-    usr_senha varchar(50) NOT NULL,
-    PRIMARY KEY (usr_id),
-    UNIQUE KEY uni_usuario_nome (usr_nome)
+create table usr_usuario (
+  usr_id bigint unsigned not null auto_increment,
+  usr_nome varchar(20) not null,
+  usr_senha varchar(50) not null,
+  primary key (usr_id),
+  unique key uni_usuario_nome (usr_nome)
 );
 
-CREATE TABLE aut_autorizacao (
-    aut_id bigint UNSIGNED NOT NULL auto_increemnt,
-    aut_nome varchar(20) NOT NULL,
-    PRIMARY KEY (aut_id),
-    UNIQUE KEY uni_aut_nome (aut_nome)
+create table aut_autorizacao (
+  aut_id bigint unsigned not null auto_increment,
+  aut_nome varchar(20) not null,
+  primary key (aut_id),
+  unique key uni_aut_nome (aut_nome)
 );
 
-CREATE TABLE usu_usuario_autorizacao (
-    usr_id bigint UNSIGNED NOT NULL,
-    aut_id bigint UNSIGNED NOT NULL,
-    PRIMARY KEY(usr_id, aut_id),
-    FOREIGN KEY aut_usuario_fk (usr_id) REFERENCES usr_usuario (usr_id),
-    FOREIGN KEY aut_autorizacao_fk (aut_id) REFERENCES aut_autorizacao (aut_id)
+create table uau_usuario_autorizacao (
+  usr_id bigint unsigned not null,
+  aut_id bigint unsigned not null,
+  primary key (usr_id, aut_id),
+  foreign key aut_usuario_fk (usr_id) references usr_usuario (usr_id) on delete restrict on update cascade,
+  foreign key aut_autorizacao_fk (aut_id) references aut_autorizacao (aut_id) on delete restrict on update cascade
 );

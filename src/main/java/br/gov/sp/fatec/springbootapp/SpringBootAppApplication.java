@@ -1,13 +1,13 @@
-package com.example.demo;
+package br.gov.sp.fatec.springbootapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class SpringBootAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(SpringBootAppApplication.class, args);
 	}
 
 }
