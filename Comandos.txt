@@ -1,0 +1,17 @@
+@Entity - Indica que é uma classe de Entidade, para mapear uma tabela
+
+@Table - Especifica a tabela que será mapeada
+
+@Column - Especifica a coluna referente a variável
+
+@Id - Diz que aquela variável representa a chave primaria da tabela
+
+@GeneratedValue(strategy = GenerationType.IDENTITY) - Especifica que a tabela é quem irá gerar os valores
+
+Repository é o DAO - Usado para acessar a Tabela do BD referente a classe
+
+@Autowired - Como o Repository é gerenciado pelo Spring, é necessário usar o Autowired para poder usar a implementação do Spring referente ao Repository
+
+@Transactional - Indica que cada método de uma classe é uma transação
+
+@Rollback - Indica que ao final de cada transação, NÃO deve ser feito o commit, mas sim o Rollback
