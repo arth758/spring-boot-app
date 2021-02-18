@@ -15,3 +15,15 @@ Repository é o DAO - Usado para acessar a Tabela do BD referente a classe
 @Transactional - Indica que cada método de uma classe é uma transação
 
 @Rollback - Indica que ao final de cada transação, NÃO deve ser feito o commit, mas sim o Rollback
+
+@ManyToMany - Indica que o tipo do relacionamento é de Muitos para Muitos
+
+FetchType.EAGER - Carrega todos os dados, antes mesmo da necessidade de usá-los - Não colocar Eager nos dois lado, pode dar erro
+
+FetchType.LAZY - Busca os dados On demand, ou seja, quando o dado for requisitado
+
+@JoinTable - Indica que é necessário usar uma tabela de conexão e é necessário o nome da tabela de junção - Usado apenas de um lado do relacionamento, do outro é usado "mappedBy"
+
+joinColumns - Indica qual a Coluna de uma determinada tabela que representa um dos lados de um relacionamento
+    |
+inverseJoinColumn - Indica a outra Coluna do relacionamento
