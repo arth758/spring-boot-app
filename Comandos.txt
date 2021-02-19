@@ -27,3 +27,5 @@ FetchType.LAZY - Busca os dados On demand, ou seja, quando o dado for requisitad
 joinColumns - Indica qual a Coluna de uma determinada tabela que representa um dos lados de um relacionamento
     |
 inverseJoinColumn - Indica a outra Coluna do relacionamento
+
+@SpringBootTest - Inicializa tudo referente ao Spring ao rodar o teste

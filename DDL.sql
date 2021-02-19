@@ -28,3 +28,11 @@ create table uau_usuario_autorizacao (
   foreign key aut_usuario_fk (usr_id) references usr_usuario (usr_id) on delete restrict on update cascade,
   foreign key aut_autorizacao_fk (aut_id) references aut_autorizacao (aut_id) on delete restrict on update cascade
 );
+
+
+/*Deletes*/
+/*
+delete from uau_usuario_autorizacao where usr_id > 1;
+delete from usr_usuario where usr_id > 1;
+delete from aut_autorizacao where aut_id > 1;
+*/
